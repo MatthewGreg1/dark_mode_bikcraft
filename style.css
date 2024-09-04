@@ -1,7 +1,28 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url("./images/onda-clara.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url("./img/onda-escura.svg");
+  }
+}
+
 body {
   margin: 0px;
   font-family: arial;
-  background: #f7f7f7;
+  background: var(--fundo-1);
+  color: var(--texto);
 }
 
 p,
@@ -22,6 +43,7 @@ a {
 /*  Início Navegação  */
 
 .logo {
+  color: var(--texto);
   font-size: 2.4rem;
   text-align: center;
   margin-top: 55px;
@@ -37,9 +59,9 @@ a {
 }
 
 .navegacao a {
-  color: black;
+  color: var(--texto);
   text-decoration: none;
-  background: white;
+  background: var(--fundo-2);
   padding: 15px 30px;
   border-radius: 4px;
   display: inline-block;
@@ -47,7 +69,7 @@ a {
 }
 
 .navegacao a:hover {
-  border-color: #ee2211;
+  border-color: var(--cor-primaria);
 }
 
 /*  Fim Navegação  */
@@ -66,7 +88,7 @@ main {
 }
 
 .introducao {
-  background: white;
+  background: var(--fundo-2);
   text-align: right;
   padding: 40px;
   align-content: center;
@@ -89,21 +111,21 @@ main {
   position: absolute;
   width: 65px;
   height: 4px;
-  background: #ee2211;
+  background: var(--cor-primaria);
   top: 30px;
   right: -32px;
 }
 
 .introducao a {
   color: white;
-  background: #ee2211;
+  background: var(--cor-primaria);
   padding: 15px 30px;
   border-radius: 4px;
   display: inline-block;
 }
 
 .introducao a:hover {
-  background: #900;
+  background: var(--cor-primaria-escura);
 }
 
 .bicicleta {
@@ -115,13 +137,13 @@ main {
   text-align: right;
   padding: 40px;
   align-self: center;
-  color: rgba(0, 0, 0, 0.2);
-  background-image: url(images/onda.svg);
+  color: var(--subtitulo);
+  background-image: var(--onda);
   /* word-break: break-all; */
 }
 
 .vantagens {
-  background: white;
+  background: var(--fundo-2);
   padding: 40px;
 }
 
@@ -138,18 +160,18 @@ main {
 }
 
 .vantagens_itens:hover {
-  border-color: #ee2211;
+  border-color: var(--cor-primaria);
 }
 
 .vantagens_itens:nth-child(odd)  /* odd = ímpar */ {
-  background-color: #f7f7f7;
+  background-color: var(--fundo-1);
 }
 
 /*  Fim Conteúdo  */
 
 footer {
   text-align: center;
-  background: white;
+  background: var(--fundo-2);
   padding: 40px;
   margin-top: 55px;
 }
