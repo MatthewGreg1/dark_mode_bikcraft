@@ -1,0 +1,199 @@
+body {
+  margin: 0px;
+  font-family: arial;
+  background: #f7f7f7;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+
+p {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*  Início Navegação  */
+
+.logo {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-top: 55px;
+}
+
+.navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 20px;
+  justify-content: center;
+  margin: 3.6rem;
+}
+
+.navegacao a {
+  color: black;
+  text-decoration: none;
+  background: white;
+  padding: 15px 30px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 3px solid transparent;
+}
+
+.navegacao a:hover {
+  border-color: #ee2211;
+}
+
+/*  Fim Navegação  */
+
+/*  Início Conteúdo  */
+
+main {
+  display: grid;
+  justify-content: center;
+}
+
+.conteudo {
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.introducao {
+  background: white;
+  text-align: right;
+  padding: 40px;
+  align-content: center;
+  line-height: 25px;
+  position: relative;
+}
+
+.introducao p {
+  padding: 20px 0px;
+}
+
+.introducao h1 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+  line-height: 30px;
+}
+
+.introducao h1::before /*  Pseudo-elemento css  */ {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 4px;
+  background: #ee2211;
+  top: 30px;
+  right: -32px;
+}
+
+.introducao a {
+  color: white;
+  background: #ee2211;
+  padding: 15px 30px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.introducao a:hover {
+  background: #900;
+}
+
+.bicicleta {
+  max-width: 100%;
+}
+
+.subtitulo {
+  font-size: 3.9rem;
+  text-align: right;
+  padding: 40px;
+  align-self: center;
+  color: rgba(0, 0, 0, 0.2);
+  background-image: url(images/onda.svg);
+  /* word-break: break-all; */
+}
+
+.vantagens {
+  background: white;
+  padding: 40px;
+}
+
+.vantagens_itens {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 18px;
+  gap: 8px 20px;
+  border-left: 4px solid transparent;
+}
+
+.vantagens_itens p {
+  grid-column: 2;
+}
+
+.vantagens_itens:hover {
+  border-color: #ee2211;
+}
+
+.vantagens_itens:nth-child(odd)  /* odd = ímpar */ {
+  background-color: #f7f7f7;
+}
+
+/*  Fim Conteúdo  */
+
+footer {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  margin-top: 55px;
+}
+
+/* Início Responsivo */
+
+.introducao_cover img {
+  height: 100%;
+  object-fit: cover; /* Para não distorcer a imagem, conforme a mesma é diminuída */
+}
+
+@media (max-width: 950px) {
+  .media_vantagens {
+    grid-template-columns: 1fr;
+  }
+
+  .subtitulo {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .logo {
+    margin-top: 20px;
+  }
+  .navegacao {
+    margin: 2.5rem;
+  }
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .introducao {
+    text-align: left;
+  }
+
+  .introducao h1::before {
+    display: none;
+  }
+
+  .subtitulo {
+    font-size: 2.5rem;
+  }
+}
+
+/* Fim Responsivo */
